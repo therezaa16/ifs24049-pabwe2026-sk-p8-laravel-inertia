@@ -1,0 +1,83 @@
+@import 'tailwindcss';
+
+@source '../views/**/*.blade.php';
+@source '../js/**/*.jsx';
+@source '../js/**/*.js';
+
+@theme {
+    --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji';
+}
+
+/* Global Pointer Cursor untuk seluruh tombol, tautan, dan menu interaktif */
+button,
+[type='button'],
+[type='reset'],
+[type='submit'],
+a,
+select,
+summary,
+label[for],
+[role='button'],
+[role='menuitem'] {
+    cursor: pointer;
+}
+
+button:disabled,
+[type='button']:disabled,
+[type='reset']:disabled,
+[type='submit']:disabled,
+[aria-disabled='true'] {
+    cursor: not-allowed;
+}
+
+/* Fokus keyboard yang jelas (aksesibilitas) */
+:focus-visible {
+    outline: 2px solid #4338ca;
+    outline-offset: 2px;
+}
+
+/* Tipografi artikel pada pembaca publik (viewer Markdown) */
+.article-body .toastui-editor-contents {
+    font-size: 1.125rem;
+    line-height: 1.85;
+    color: #1e293b;
+}
+
+.article-body .toastui-editor-contents p {
+    margin: 1.1em 0;
+}
+
+.article-body .toastui-editor-contents h2 {
+    font-size: 1.6rem;
+    margin-top: 2em;
+    border-bottom: none;
+}
+
+.article-body .toastui-editor-contents h3 {
+    font-size: 1.3rem;
+    margin-top: 1.6em;
+}
+
+@keyframes pill-in {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-pill-in {
+    animation: pill-in 0.15s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-pill-in,
+    .animate-spin,
+    .animate-pulse {
+        animation: none !important;
+    }
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+    <defs>
+        <linearGradient id="blog-grad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#4338CA" />
+            <stop offset="100%" stop-color="#7C3AED" />
+        </linearGradient>
+    </defs>
+    <rect width="64" height="64" rx="18" fill="url(#blog-grad)" />
+    <path d="M22 17h13a8 8 0 010 16H22V17zm0 16h15a8 8 0 010 16H22V33z" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round" />
+</svg>
