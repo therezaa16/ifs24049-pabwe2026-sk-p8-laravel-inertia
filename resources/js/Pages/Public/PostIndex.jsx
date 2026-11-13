@@ -4,7 +4,7 @@ import AppLayout from '../../Layouts/AppLayout';
 import Pagination from '../../Components/Pagination';
 import { ClockIcon, ImageIcon, LoginIcon, SearchIcon, UserPlusIcon } from '../../Components/Icons';
 
-function ArticleCard({ post }) {
+function ArticleCard({ post, Heading = 'h3' }) {
     return (
         <li>
             <article className="h-full flex flex-col bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition">
@@ -19,11 +19,11 @@ function ArticleCard({ post }) {
                 </Link>
                 <div className="flex-1 flex flex-col p-5">
                     <span className={`self-start text-xs font-bold px-2.5 py-1 rounded-full border ${post.category_badge}`}>{post.category}</span>
-                    <h3 className="mt-3 text-lg font-bold text-slate-900 leading-snug">
+                    <Heading className="mt-3 text-lg font-bold text-slate-900 leading-snug">
                         <Link href={`/articles/${post.slug}`} className="hover:text-indigo-800 hover:underline underline-offset-2">
                             {post.title}
                         </Link>
-                    </h3>
+                    </Heading>
                     {post.excerpt && <p className="mt-2 text-sm text-slate-700 line-clamp-3">{post.excerpt}</p>}
                     <div className="mt-auto pt-4 flex items-center justify-between gap-3 text-xs text-slate-600">
                         <span className="truncate">
@@ -146,7 +146,7 @@ export default function PostIndex({ posts, categories, filters, isHome }) {
                     ) : (
                         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                             {posts.data.map((post) => (
-                                <ArticleCard key={post.id} post={post} />
+                                <ArticleCard key={post.id} post={post} Heading={isHome ? 'h3' : 'h2'} />
                             ))}
                         </ul>
                     )}

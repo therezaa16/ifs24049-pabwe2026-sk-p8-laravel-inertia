@@ -12,6 +12,10 @@ export default defineConfig({
         react(),
         tailwindcss(),
     ],
+    build: {
+        // Source map membantu debugging produksi (audit Lighthouse "missing source maps").
+        sourcemap: true,
+    },
     server: {
         watch: {
             ignored: ['**/storage/framework/views/**'],

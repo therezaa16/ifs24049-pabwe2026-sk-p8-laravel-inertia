@@ -59,6 +59,26 @@ button:disabled,
     margin-top: 1.6em;
 }
 
+/* Kontras warna WCAG AA untuk elemen Markdown (override default TOAST UI) */
+.toastui-editor-contents :not(pre) > code {
+    color: #9f1239;
+    background-color: #fff1f2;
+}
+
+.toastui-editor-contents a {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+.toastui-editor-contents blockquote,
+.toastui-editor-contents blockquote p {
+    color: #475569;
+}
+
+.toastui-editor-contents del {
+    color: #475569;
+}
+
 @keyframes pill-in {
     from {
         opacity: 0;
